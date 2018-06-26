@@ -10,7 +10,9 @@ const app = express()
 // Express configuration
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.static(path.join(__dirname, '../client')))
+app.get('/', (req, res) => {
+  res.send('hello world')
+})
 
 // Run server
 app.listen(port, () => console.log(`Server is listening on port ${port}!`))
