@@ -23,7 +23,7 @@
   "private": true,
   "main": "server/index.js",
   "scripts": {
-    "sbuild": "node node_modules/tslint/bin/tslint --project src/server --force -t stylish && node node_modules/typescript/bin/tsc --project src/server/ --strictNullChecks",
+    "sbuild": "node node_modules/typescript/bin/tsc --project src/server/ --strictNullChecks",
     "cbuild": "node ./build/build.js",
     "build": "npm run sbuild && npm run cbuild",
     "cdev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
