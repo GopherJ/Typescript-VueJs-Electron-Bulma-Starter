@@ -10,7 +10,7 @@ import * as config from './config.dev.json'
 
 
 Vue.use(Buefy)
-Vue.use(VueNativeSock, `ws://${(<any>config).ws_socket.host}:${(<any>config).ws_socket.port}`, {
+Vue.use(VueNativeSock, `ws://${(<any>config).ws_socket.host}:${(<any>config).ws_socket.port}/${(<any>config).ws_socket.subscriber}`, {
   store,
   format: 'json',
 
@@ -19,7 +19,12 @@ Vue.use(VueNativeSock, `ws://${(<any>config).ws_socket.host}:${(<any>config).ws_
   reconnectionDelay: 3000
 })
 
+// Vue config
 Vue.config.productionTip = false
+Vue.config.silent = true
+Vue.config.errorHandler = (err, vm, info) =>  {
+
+}
 
 new Vue({
   el: '#app',
