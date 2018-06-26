@@ -4,8 +4,15 @@ import { MutationTree, ActionTree } from 'vuex'
 
 Vue.use(Vuex)
 
+interface Ws {
+  isConnected: boolean,
+  ws_socket: null,
+  message: String
+}
+
 interface State {
-  counter: number
+  counter: number,
+  socket: Ws
 }
 
 const mutations: MutationTree<State> = {
@@ -17,8 +24,12 @@ const mutations: MutationTree<State> = {
   },
 
   SOCKET_ONOPEN: (state, event) => {
+    state.socket.isConnected = true
+    state.socket.ws_socket = event.target
   },
-  SOCKET_ONCLOSE: (state, event) => {
+  SOCKET_ONCLOSE: (state) => {
+    state.socket.isConnected = false
+    state.socket.ws_socket = null
   },
   SOCKET_ONERROR: (state, event) => {
   },
@@ -27,6 +38,7 @@ const mutations: MutationTree<State> = {
   SOCKET_RECONNECT_ERROR: (state) => {
   },
   SOCKET_ONMESSAGE: (state, message) => {
+    state.socket.message = message
   }
 }
 
@@ -34,7 +46,12 @@ const actions: ActionTree<State, any> = {
 }
 
 const state: State = {
-  counter: 0
+  counter: 0,
+  socket: {
+    isConnected: false,
+    ws_socket: null,
+    message: ''
+  }
 }
 
 export default new Vuex.Store<State>({
