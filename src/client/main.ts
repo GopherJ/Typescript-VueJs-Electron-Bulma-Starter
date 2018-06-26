@@ -3,13 +3,20 @@
 import Vue from 'vue'
 import Buefy from 'buefy'
 import VueNativeSock from 'vue-native-websocket'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import Notification from 'vue-notification'
+import VueRamda from 'vue-ramda'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import * as config from './config.dev.json'
 
 
+Vue.use(VueAxios, axios)
+Vue.use(Notification)
 Vue.use(Buefy)
+Vue.use(VueRamda)
 Vue.use(VueNativeSock, `ws://${(<any>config).ws_socket.host}:${(<any>config).ws_socket.port}/${(<any>config).ws_socket.subscriber}`, {
   store,
   format: 'json',
