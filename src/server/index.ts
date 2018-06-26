@@ -22,7 +22,9 @@ wss.on('connection', (ws: WebSocket) => {
       // Log the received message and send it back to the client
       console.log('received: %s', message)
       ws.send(`Hello, you sent -> ${message}`)
-  });
+  })
+
+  ws.send(`Connected!`)
 })
 
 // Express configuration
