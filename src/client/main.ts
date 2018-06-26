@@ -9,7 +9,7 @@ import Notification from 'vue-notification'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import * as config from '../config.json'
+import * as config from '../config/index.json'
 
 
 Vue.use(VueAxios, axios)
