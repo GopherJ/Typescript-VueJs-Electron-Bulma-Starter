@@ -6,6 +6,6 @@
         "node_modules"
     ],
     "watch": ["src/server", "src/client", "src/shards"],
-    "exec": "yarn build",
-    "ext": "ts"
+    "exec": "npm run build && node dist/server/index.js",
+    "ext": "js, ts, vue"
 }

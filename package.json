@@ -18,10 +18,11 @@
   "private": true,
   "main": "server/index.js",
   "scripts": {
-    "prestart": "node node_modules/tslint/bin/tslint --project src/server --force -t stylish && node node_modules/typescript/bin/tsc --project src/server/ --strictNullChecks",
+    "sbuild": "node node_modules/tslint/bin/tslint --project src/server --force -t stylish && node node_modules/typescript/bin/tsc --project src/server/ --strictNullChecks",
+    "cbuild": "node ./build/build.js",
+    "build": "npm run sbuild && npm run cbuild",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "node dist/server/index.js",
-    "build": "npm run prestart && node ./build/build.js"
+    "start": "nodemon"
   },
   "dependencies": {
     "@types/express": "^4.11.0",
@@ -33,6 +34,7 @@
     "popper.js": "^1.12.9",
     "ramda": "^0.25.0",
     "vue": "^2.5.2",
+    "vue-native-websocket": "^2.0.7",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "vuex-class": "^0.3.1"
@@ -71,10 +73,10 @@
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-dev-middleware": "^1.12.0",
+    "webpack-dev-server": "^2.9.1",
     "webpack-hot-middleware": "^2.19.1",
     "webpack-merge": "^4.1.0",
-    "webpack-node-externals": "^1.6.0",
-    "webpack-dev-server": "^2.9.1"
+    "webpack-node-externals": "^1.6.0"
   },
   "engines": {
     "node": ">= 4.0.0",

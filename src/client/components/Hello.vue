@@ -3,6 +3,18 @@
         <div class="greeting">Hello {{name}}{{exclamationMarks}}</div>
         <button class="button is-danger" @click="decrement">-</button>
         <button class="button is-primary" @click="increment">+</button>
+        <button class="button is-success">djljwl</button>
+        <button class="button is-success">djljwl</button>
+        <button class="button is-success">djljwl</button>
+        <button class="button is-success">djljwl</button>
+        <button class="button is-success">djljwl</button>
+        <button class="button is-success">djljwl</button>
+        <button class="button is-success">djljwl</button>
+        <button class="button is-success">djljwl</button>
+        <button class="button is-success">djljwl</button>
+        <button class="button is-success">djljwl</button>
+        <button class="button is-success">djljwl</button>
+        <button class="button is-success">djljwl</button>
     </div>
 </template>
 
