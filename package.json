@@ -26,8 +26,9 @@
     "sbuild": "node node_modules/tslint/bin/tslint --project src/server --force -t stylish && node node_modules/typescript/bin/tsc --project src/server/ --strictNullChecks",
     "cbuild": "node ./build/build.js",
     "build": "npm run sbuild && npm run cbuild",
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "nodemon"
+    "cdev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "sdev": "nodemon",
+    "start": "node dist/server/index.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
