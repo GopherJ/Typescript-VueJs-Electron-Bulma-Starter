@@ -2,10 +2,10 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Buefy from 'buefy'
+import VueNativeSock from 'vue-native-websocket'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import VueNativeSock from 'vue-native-websocket'
 import * as config from './config.dev.json'
 
 

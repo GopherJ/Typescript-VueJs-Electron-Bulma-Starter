@@ -5,7 +5,7 @@
         ".git",
         "node_modules"
     ],
-    "watch": ["src/server", "src/client", "src/shared"],
-    "exec": "npm run build && node dist/server/index.js",
+    "watch": ["src/server", "src/shared"],
+    "exec": "npm run sbuild && node dist/server/index.js",
     "ext": "js, ts, vue"
 }
