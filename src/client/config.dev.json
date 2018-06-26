@@ -1,0 +1,6 @@
+{
+  "ws_socket": {
+    "host" : "localhost",
+    "port" : 5566
+  }
+}

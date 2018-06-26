@@ -14,6 +14,18 @@ const mutations: MutationTree<State> = {
   },
   decr: (state) => {
     state.counter--
+  },
+  SOCKET_ONOPEN: (state, event) => {
+  },
+  SOCKET_ONCLOSE: (state, event) => {
+  },
+  SOCKET_ONERROR: (state, event) => {
+  },
+  SOCKET_RECONNECT: (state, event) => {
+  },
+  SOCKET_RECONNECT_ERROR: (state) => {
+  },
+  SOCKET_ONMESSAGE: (state, message) => {
   }
 }
 
@@ -28,7 +40,7 @@ const state: State = {
 }
 
 export default new Vuex.Store<State>({
-  state,  
+  state,
   mutations,
   actions
 });
