@@ -1,0 +1,88 @@
+{
+  "name": "vuejs_nodejs_ts",
+  "description": "VueJS NodeJS TypeScript Skeleton app",
+  "contributors": [
+    {
+      "name": "Paweł Żentała",
+      "email": "zentala@gmail.com",
+      "url": "https://github.com/zentala"
+    },
+    {
+      "name": "Adrien Jonquet",
+      "email": "adrien.jonquet@gmail.com",
+      "url": "https://github.com/adrienjonquet"
+    }
+  ],
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "server/index.js",
+  "scripts": {
+    "prestart": "node node_modules/tslint/bin/tslint --project src/server --force -t stylish && node node_modules/typescript/bin/tsc --project src/server/ --strictNullChecks",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start": "node dist/server/index.js",
+    "build": "npm run prestart && node ./build/build.js"
+  },
+  "dependencies": {
+    "@types/express": "^4.11.0",
+    "body-parser": "^1.18.2",
+    "buefy": "^0.6.3",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.7.2",
+    "popper.js": "^1.12.9",
+    "ramda": "^0.25.0",
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-class": "^0.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "chalk": "^2.1.0",
+    "connect-history-api-fallback": "^1.3.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.9",
+    "eventsource-polyfill": "^0.9.6",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^1.1.5",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "glob": "^7.1.2",
+    "html-webpack-plugin": "^2.30.1",
+    "http-proxy-middleware": "^0.17.4",
+    "nodemon": "^1.14.11",
+    "opn": "^5.1.0",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "ora": "^1.3.0",
+    "postcss-loader": "^2.0.10",
+    "precss": "^3.1.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
+    "shelljs": "^0.7.8",
+    "style-loader": "^0.19.1",
+    "ts-loader": "^3.3.1",
+    "tslint": "^5.9.1",
+    "tslint-config-standard": "^7.0.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.7.2",
+    "url-loader": "^0.5.9",
+    "vue-loader": "^13.0.5",
+    "vue-property-decorator": "^6.1.0",
+    "vue-template-compiler": "^2.5.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.19.1",
+    "webpack-merge": "^4.1.0",
+    "webpack-node-externals": "^1.6.0",
+    "webpack-dev-server": "^2.9.1"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

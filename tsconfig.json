@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/client/",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es5"
+
+  },
+  "include": [
+    "./src/client/**/*"
+  ]
+}
