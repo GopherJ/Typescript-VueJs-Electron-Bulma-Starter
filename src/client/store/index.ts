@@ -15,6 +15,7 @@ const mutations: MutationTree<State> = {
   decr: (state) => {
     state.counter--
   },
+
   SOCKET_ONOPEN: (state, event) => {
   },
   SOCKET_ONCLOSE: (state, event) => {
@@ -30,9 +31,6 @@ const mutations: MutationTree<State> = {
 }
 
 const actions: ActionTree<State, any> = {
-  incr_action: (state, c) => {
-
-  }
 }
 
 const state: State = {

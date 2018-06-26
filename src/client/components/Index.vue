@@ -1,50 +1,34 @@
 <template>
-    <div>
-        <div class="greeting">Hello {{name}}{{exclamationMarks}}</div>
+    <section class="index">
         <button class="button is-danger" @click="decrement">-</button>
         <button class="button is-primary" @click="increment">+</button>
-        <button class="button is-success">djljwl</button>
-        <button class="button is-success">djljwl</button>
-        <button class="button is-success">djljwl</button>
-        <button class="button is-success">djljwl</button>
-        <button class="button is-success">djljwl</button>
-        <button class="button is-success">djljwl</button>
-        <button class="button is-success">djljwl</button>
-        <button class="button is-success">djljwl</button>
-        <button class="button is-success">djljwl</button>
-        <button class="button is-success">djljwl</button>
-        <button class="button is-success">djljwl</button>
-        <button class="button is-success">djljwl</button>
-    </div>
+    </section>
 </template>
 
-<script lang="ts">
-import { Vue, Component, Prop } from "vue-property-decorator";
+<script lang='ts'>
+import { Vue, Component, Prop } from 'vue-property-decorator'
+import { mapMutations } from 'vuex';
 
 @Component
-export default class Hello extends Vue {
+export default class Index extends Vue {
     @Prop() name!: string;
     @Prop() initialEnthusiasm!: number;
 
-    enthusiasm = this.initialEnthusiasm;
-
+    ...mapMutations([
+      'incr',
+      'decr'
+    ]),
     increment() {
-        this.enthusiasm++;
-    }
-    decrement() {
-        if (this.enthusiasm > 1) {
-            this.enthusiasm--;
-        }
     }
 
-    get exclamationMarks(): string {
+    decrement() {
+    }
+
+    get Counter(): string {
         return (this.enthusiasm + 1).toString();
     }
 }
 </script>
 
-<style>
-.greeting {
-    font-size: 20px;
-}
+<style scoped>
 </style>
