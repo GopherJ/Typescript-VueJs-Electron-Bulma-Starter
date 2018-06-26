@@ -1,33 +1,26 @@
 <template>
     <section class="index">
+        <div>{{ Counter }}</div>
         <button class="button is-danger" @click="decrement">-</button>
         <button class="button is-primary" @click="increment">+</button>
     </section>
 </template>
 
 <script lang='ts'>
-import { Vue, Component, Prop } from 'vue-property-decorator'
-import { mapMutations } from 'vuex';
 
-@Component
-export default class Index extends Vue {
-    @Prop() name!: string;
-    @Prop() initialEnthusiasm!: number;
+  import { Vue, Component } from 'vue-property-decorator'
+  import { Mutation, State } from 'vuex-class'
 
-    ...mapMutations([
-      'incr',
-      'decr'
-    ]),
-    increment() {
-    }
+  @Component
+  export default class Index extends Vue {
+      @State('counter') counter: number
+      @Mutation('incr') increment: Function
+      @Mutation('decr') decrement: Function
 
-    decrement() {
-    }
-
-    get Counter(): string {
-        return (this.enthusiasm + 1).toString();
-    }
-}
+      get Counter(): number {
+          return this.counter
+      }
+  }
 </script>
 
 <style scoped>

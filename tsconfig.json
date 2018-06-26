@@ -2,12 +2,15 @@
   "compilerOptions": {
     "outDir": "./dist/client/",
     "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
     "sourceMap": true,
     "noImplicitReturns": true,
     "module": "es2015",
     "moduleResolution": "node",
-    "target": "es5"
+    "target": "es5",
+    // vue-class-component require it
+    "experimentalDecorators": true,
+    // vue-class require it
+    "strictFunctionTypes": false
   },
   "include": [
     "./src/client/**/*"
