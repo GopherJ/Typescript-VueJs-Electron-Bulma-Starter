@@ -2,7 +2,6 @@ import * as express from 'express'
 import * as bodyParser from 'body-parser'
 import * as WebSocket from 'ws'
 import * as http from 'http'
-import * as path from 'path'
 
 // Create Express server
 const app = express()
