@@ -22,7 +22,7 @@
       @Provide() sended: string | null
 
       @State('counter') counter: number
-      @State('socket.message') message: string
+      @State('socket') socket: string
       @Mutation('incr') increment: Function
       @Mutation('decr') decrement: Function
 
@@ -33,6 +33,7 @@
       mounted() {
         setInterval(() => {
           this.sended = "" + Math.random() * 100
+
         })
       }
   }

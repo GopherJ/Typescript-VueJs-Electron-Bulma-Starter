@@ -1,19 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { MutationTree, ActionTree } from 'vuex'
+import { Ws, State } from '../../model'
+
+
 
 Vue.use(Vuex)
-
-interface Ws {
-  isConnected: boolean,
-  ws_socket: null,
-  message: String
-}
-
-interface State {
-  counter: number,
-  socket: Ws
-}
 
 const mutations: MutationTree<State> = {
   incr: (state) => {
