@@ -1,8 +1,10 @@
 {
   "ws_socket": {
     "host" : "localhost",
-    "port" : 1919,
-    "subscriber": "ws/subscriber",
-    "publisher": "ws/publisher"
+    "port" : 40080,
+    "path": "ws"
+  },
+  "server": {
+    "port": 1919
   }
 }

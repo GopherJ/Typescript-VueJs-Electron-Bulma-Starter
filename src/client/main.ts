@@ -15,7 +15,7 @@ import * as config from '../config/index.json'
 Vue.use(VueAxios, axios)
 Vue.use(Notification)
 Vue.use(Buefy)
-Vue.use(VueNativeSock, `ws://${(<any>config).ws_socket.host}:${(<any>config).ws_socket.port}/${(<any>config).ws_socket.subscriber}`, {
+Vue.use(VueNativeSock, `ws://${(<any>config).ws_socket.host}:${(<any>config).ws_socket.port}/${(<any>config).ws_socket.path}`, {
   store,
   format: 'json',
 

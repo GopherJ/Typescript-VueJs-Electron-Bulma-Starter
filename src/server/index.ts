@@ -2,8 +2,8 @@ import * as express from 'express'
 import * as bodyParser from 'body-parser'
 import * as WebSocket from 'ws'
 import * as http from 'http'
-
-const port = 1919
+import * as url from 'url'
+import * as config from '../config/index.json'
 
 // Create Express server
 const app = express()
@@ -12,19 +12,21 @@ const app = express()
 const server = http.createServer(app)
 
 // Initialize the WebSocket server instance
-const wss = new WebSocket.Server({ server })
+const wss = new WebSocket.Server({ noServer: true })
 
-wss.on('connection', (ws: WebSocket) => {
+wss.on('connection', function(ws) {
+  console.log(ws)
+})
 
-  // Connection is up, let's add a simple simple event
-  ws.on('message', (message: string) => {
+server.on('upgrade', function upgrade(request, socket, head) {
+  const pathname = url.parse(request.url).pathname;
+  if (pathname !== '/ws') {
+    socket.destroy();
+  }
 
-      // Log the received message and send it back to the client
-      console.log('received: %s', message)
-      ws.send(`Hello, you sent -> ${message}`)
-  })
-
-  ws.send(`Connected!`)
+  wss.handleUpgrade(request, socket, head, function done(ws) {
+    wss.emit('connection', ws, request);
+  });
 })
 
 // Express configuration
@@ -35,4 +37,4 @@ app.get('/', (req, res) => {
 })
 
 // Run server
-app.listen(port, () => console.log(`Server is listening on port ${port}!`))
+app.listen((<any>config).server.port, () => console.log(`Server is listening on port ${(<any>config).server.port}!`))

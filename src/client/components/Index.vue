@@ -6,8 +6,7 @@
           <button class="button is-primary" @click="increment">+</button>
       </div>
       <div>
-          <div>Websocket send:  </div>
-          <div>Websocket recv: {{ message }}</div>
+          <div>Websocket recv: {{ socket.message }}</div>
       </div>
     </section>
 </template>
@@ -16,25 +15,17 @@
 
   import { Vue, Component, Provide } from 'vue-property-decorator'
   import { Mutation, State } from 'vuex-class'
+  import { Ws } from '../../model'
 
   @Component
   export default class Index extends Vue {
-      @Provide() sended: string | null
-
       @State('counter') counter: number
-      @State('socket') socket: string
-      @Mutation('incr') increment: Function
-      @Mutation('decr') decrement: Function
+      @State('socket') socket: Ws
+      @Mutation('incre') increment: Function
+      @Mutation('decre') decrement: Function
 
       get Counter(): number {
           return this.counter
-      }
-
-      mounted() {
-        setInterval(() => {
-          this.sended = "" + Math.random() * 100
-
-        })
       }
   }
 </script>
