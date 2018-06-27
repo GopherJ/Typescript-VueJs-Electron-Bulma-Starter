@@ -29,8 +29,8 @@
     "cdev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "sdev": "nodemon",
     "sstart": "node dist/server/index.js",
-    "estart": "electron .",
-    "ebuild": "electron-packager <sourcedir> <appname> --platform=win32 --arch=x86_64"
+    "estart": "node node_modules/electron/index.js .",
+    "ebuild": "node node_modules/electron-packager/index.js <sourcedir> <appname> --platform=win32 --arch=x86_64"
   },
   "dependencies": {
     "axios": "^0.18.0",

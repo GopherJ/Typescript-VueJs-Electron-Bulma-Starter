@@ -1,8 +1,8 @@
-# Typescript-VueJs-Bulma-Starter
+# Typescript-VueJs-Electron-Bulma-Starter
 
 ## Install
 
-1. `git clone https://github.com/GopherJ/Typescript-VueJs-Bulma-Starter`
+1. `git clone https://github.com/GopherJ/Typescript-VueJs-Electron-Bulma-Starter`
 2. `yarn`
 
 # Project Structure
@@ -39,6 +39,9 @@ yarn cdev
 # dev with hot-reload express server -> watch server change
 yarn sdev
 
-# app run
-yarn start
+# start nodejs server
+yarn sstart
+
+# start electron app
+yarn estart
 ```
