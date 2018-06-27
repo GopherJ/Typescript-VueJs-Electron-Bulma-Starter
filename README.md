@@ -44,4 +44,8 @@ yarn sstart
 
 # start electron app
 yarn estart
+
+# compile electron app
+# need to configure
+yarn ebuild
 ```
